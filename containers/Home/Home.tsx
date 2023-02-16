@@ -25,24 +25,19 @@ export default function Home(props: HomePageProps) {
   const setting = useSetting();
   const [demo, setDeme] = useState(setting);
 
-  useUpdateEffect(() => {
-    console.log("asdasd");
-    setDeme(setting);
-  }, [setting]);
-
   const dataServiceDetail = get(props, "initData[1].items");
   const dataHomePage = get(props, "initData[0].items[0]");
   const metaSeo = get(dataHomePage, "meta");
   const metaSeo1 = { metaSeo, ...setting };
 
-  const renderSEO = useMemo(() => {
-    return <SEO {...getSeoObject(metaSeo, setting)} />;
-  }, [demo]);
+  // const renderSEO = useMemo(() => {
+  //   return <SEO {...getSeoObject(metaSeo, setting)} />;
+  // }, [demo]);
 
   return (
     <Fragment>
-      {renderSEO}
-      {/* <SEO {...getSeoObject(metaSeo1)} /> */}
+      {/* {renderSEO} */}
+      <SEO {...getSeoObject(metaSeo1)} />
       <HomeBanner data={dataHomePage} />
 
       <HomeContent data={dataHomePage} />
