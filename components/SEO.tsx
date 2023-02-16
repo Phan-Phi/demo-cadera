@@ -13,7 +13,7 @@ type SEOProps = {
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  const { title, description, locale, defaultNextSeo } = props;
+  const { title, description, locale, defaultNextSeo, image } = props;
   const { favicon, company, og_image } = setting;
 
   const headTitle =
@@ -21,7 +21,7 @@ const SEO = (props: SEOProps) => {
 
   return (
     <NextSeo
-      title={headTitle || company || "Cadera Systems LLCaaa"}
+      title={headTitle || company || "Cadera Systems LLC"}
       description={description || ""}
       openGraph={{
         title: headTitle || company || "CADERA SYSTEMS LLC",
@@ -30,7 +30,7 @@ const SEO = (props: SEOProps) => {
         locale: locale ?? "vi",
         images: [
           {
-            url: og_image || "/og_image.png",
+            url: image || og_image,
             alt: headTitle,
             type: "image/jpeg",
           },
