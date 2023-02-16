@@ -5,14 +5,14 @@ import { NextSeo, NextSeoProps } from "next-seo";
 import { useMemo } from "react";
 import useSWR from "swr";
 
-type SEOProps = {
+interface SEOProps extends NextSeoProps {
   title?: string;
   description?: string;
   image?: string;
   favicon?: string;
   company1111?: string;
   locale?: string;
-};
+}
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
@@ -50,6 +50,7 @@ const SEO = (props: SEOProps) => {
           href: favicon || "/fav.png",
         },
       ]}
+      {...props}
     />
   );
 };
