@@ -12,6 +12,7 @@ type SEOProps = {
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
+  console.log("🚀 ~ file: SEO.tsx:15 ~ SEO ~ setting", setting);
 
   const { title, description, locale, defaultNextSeo, image } = props;
   const { favicon, company, og_image } = setting;
