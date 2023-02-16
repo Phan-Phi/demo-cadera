@@ -1,4 +1,3 @@
-import { SWR } from "@/contexts";
 import { useFetch, useSetting } from "@/hooks";
 import { NextSeo, NextSeoProps } from "next-seo";
 import { useMemo } from "react";
@@ -15,11 +14,11 @@ type SEOProps = {
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  // const resData = SWR("https://cadera.t-solution.vn/api/v2/");
-  // console.log("🚀 ~ file: SEO.tsx:22 ~ SEO ~ rawData", resData);
+  const { rawData } = useFetch("https://cadera.t-solution.vn/api/v2/");
+  console.log("🚀 ~ file: SEO.tsx:22 ~ SEO ~ rawData", rawData);
 
   const { title, description, locale, defaultNextSeo, image } = props;
-  const { favicon, company, og_image } = setting;
+  const { favicon, company, og_image, address } = setting;
   console.log("🚀 ~ file: SEO.tsx:29 ~ SEO ~ company", company);
 
   const headTitle = title == undefined ? undefined : title;
@@ -27,12 +26,12 @@ const SEO = (props: SEOProps) => {
 
   return (
     <NextSeo
-      title={company}
+      title={address}
       description={description || ""}
       openGraph={{
-        title: company,
-        description: company,
-        site_name: company,
+        title: address,
+        description: address,
+        site_name: address,
         locale: locale ?? "vi",
         images: [
           {

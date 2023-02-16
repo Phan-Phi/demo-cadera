@@ -5,12 +5,14 @@ const getSeoObject = (props: any) => {
   const description = get(props, "search_description");
   const image = undefined;
   const locale = get(props, "locale");
+  const demo111 = "asdasdasdasdasd";
 
   return {
     title,
     description,
     image,
     locale,
+    demo111,
   };
 };
 
