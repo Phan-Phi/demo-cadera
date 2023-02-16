@@ -29,7 +29,7 @@ const Contact = (props: ContactPageProps) => {
 
   return (
     <Container>
-      <SEO {...getSeoObject(metaSeo)} />
+      {/* <SEO {...getSeoObject(metaSeo)} /> */}
       <WrapperSection>
         <Stack spacing={5}>
           <StyledHeadLine title={title} subTitle={sub_title} />

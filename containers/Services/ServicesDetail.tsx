@@ -24,7 +24,7 @@ export default function ServicesDetail(props: ServiceDetailProps) {
   const { title, short_desc, body, meta } = dataDetail;
   return (
     <WrapperSection>
-      <SEO {...getSeoObject(meta)} />
+      {/* <SEO {...getSeoObject(meta)} /> */}
 
       <Container>
         <SectionTitle short_desc={short_desc} title={title} />
