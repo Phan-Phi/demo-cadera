@@ -14,10 +14,6 @@ type SEOProps = {
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  if (Object.entries(setting).length === 0) {
-    return null;
-  }
-
   // const { rawData } = useFetch("https://cadera.t-solution.vn/api/v2/");
   // console.log("🚀 ~ file: SEO.tsx:22 ~ SEO ~ rawData", rawData);
 
@@ -25,18 +21,17 @@ const SEO = (props: SEOProps) => {
   const { favicon, company, og_image } = setting;
   console.log("🚀 ~ file: SEO.tsx:29 ~ SEO ~ company", company);
 
-  const headTitle =
-    title == undefined ? undefined : `${title} Cadera Systems LLC`;
+  const headTitle = title == undefined ? undefined : title;
   const demo = headTitle || company;
 
   return (
     <NextSeo
-      title={demo}
+      title={company}
       description={description || ""}
       openGraph={{
-        title: demo,
-        description: demo,
-        site_name: demo,
+        title: company,
+        description: company,
+        site_name: company,
         locale: locale ?? "vi",
         images: [
           {
