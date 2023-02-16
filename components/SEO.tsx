@@ -1,3 +1,4 @@
+import { SWR } from "@/contexts";
 import { useFetch, useSetting } from "@/hooks";
 import { NextSeo, NextSeoProps } from "next-seo";
 import { useMemo } from "react";
@@ -14,8 +15,8 @@ type SEOProps = {
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  // const { rawData } = useFetch("https://cadera.t-solution.vn/api/v2/");
-  // console.log("🚀 ~ file: SEO.tsx:22 ~ SEO ~ rawData", rawData);
+  // const resData = SWR("https://cadera.t-solution.vn/api/v2/");
+  // console.log("🚀 ~ file: SEO.tsx:22 ~ SEO ~ rawData", resData);
 
   const { title, description, locale, defaultNextSeo, image } = props;
   const { favicon, company, og_image } = setting;
