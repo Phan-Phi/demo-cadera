@@ -1,5 +1,5 @@
 import { get } from "lodash";
-import { Fragment, useMemo } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 
 import {
   HomeType,
@@ -22,7 +22,10 @@ export type HomePageProps = IPage<
 
 export default function Home(props: HomePageProps) {
   const setting = useSetting();
-
+  const [demo, setDeme] = useState(setting);
+  useEffect(() => {
+    console.log("asdasd");
+  }, [demo]);
   const dataServiceDetail = get(props, "initData[1].items");
   const dataHomePage = get(props, "initData[0].items[0]");
   const metaSeo = get(dataHomePage, "meta");
