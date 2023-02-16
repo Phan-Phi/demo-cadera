@@ -29,9 +29,9 @@ const SEO = (props: SEOProps) => {
       title={address}
       description={description || ""}
       openGraph={{
-        title: address,
-        description: address,
-        site_name: address,
+        title: company ? address : address,
+        description: company ? address : address,
+        site_name: company ? address : address,
         locale: locale ?? "vi",
         images: [
           {
