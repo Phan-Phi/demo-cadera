@@ -21,12 +21,12 @@ const SEO = (props: SEOProps) => {
 
   return (
     <NextSeo
-      title={headTitle || company || "Cadera Systems LLC"}
+      title={headTitle || company || "Cadera Systems LLCaaaaa"}
       description={description || ""}
       openGraph={{
-        title: headTitle || company || "CADERA SYSTEMS LLC",
+        title: headTitle || company || "CADERA SYSTEMS LLCaaaaaaa",
         description: description || "",
-        site_name: company || "CADERA SYSTEMS LLC",
+        site_name: company || "CADERA SYSTEMS LLCaaaa",
         locale: locale ?? "vi",
         images: [
           {

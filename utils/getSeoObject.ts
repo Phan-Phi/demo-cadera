@@ -3,7 +3,7 @@ import { get } from "lodash";
 const getSeoObject = (props: any) => {
   const title = get(props, "seo_title");
   const description = get(props, "search_description");
-  const image = get(props, "og_image");
+  const image = undefined;
   const locale = get(props, "locale");
 
   return {
