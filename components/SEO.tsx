@@ -8,53 +8,59 @@ type SEOProps = {
   image?: string;
   favicon?: string;
   locale?: string;
+  company?: string;
+  settingImage?: string;
   defaultNextSeo?: NextSeoProps;
 };
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  const { title, description, locale, defaultNextSeo, image } = props;
-  const { favicon, company, og_image } = setting;
+  const {
+    title,
+    description,
+    locale,
+    defaultNextSeo,
+    image,
+    company,
+    settingImage,
+  } = props;
+  console.log("🚀 ~ file: SEO.tsx:18 ~ SEO ~ props", props);
+  const { favicon } = setting;
 
   const headTitle =
     title == undefined ? undefined : `${title} Cadera Systems LLC`;
 
-  const renderNextSeo = useMemo(() => {
-    console.log("sadasdasdasd", setting.og_image);
-    return (
-      <NextSeo
-        title={headTitle || company}
-        description={description || ""}
-        openGraph={{
-          title: headTitle || company,
-          description: description || "",
-          site_name: company,
-          locale: locale ?? "vi",
-          images: [
-            {
-              url: image || og_image,
-              alt: headTitle,
-              type: "image/jpeg",
-            },
-          ],
-        }}
-        additionalLinkTags={[
+  return (
+    <NextSeo
+      title={headTitle || company}
+      description={description || ""}
+      openGraph={{
+        title: headTitle || company,
+        description: description || "",
+        site_name: company,
+        locale: locale ?? "vi",
+        images: [
           {
-            rel: "icon",
-            href: favicon || "/fav.png",
+            url: image || settingImage || "",
+            alt: headTitle,
+            type: "image/jpeg",
           },
-          {
-            rel: "apple-touch-icon",
-            href: favicon || "/fav.png",
-          },
-        ]}
-        {...defaultNextSeo}
-      />
-    );
-  }, [og_image]);
-
-  return <>{renderNextSeo}</>;
+        ],
+      }}
+      additionalLinkTags={[
+        {
+          rel: "icon",
+          href: favicon || "/fav.png",
+        },
+        {
+          rel: "apple-touch-icon",
+          href: favicon || "/fav.png",
+        },
+      ]}
+      {...defaultNextSeo}
+    />
+  );
 };
 
 export default SEO;
