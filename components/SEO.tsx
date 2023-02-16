@@ -21,17 +21,17 @@ const SEO = (props: SEOProps) => {
 
   return (
     <NextSeo
-      title={headTitle || company || "Cadera Systems LLC"}
+      title={headTitle || company || "Cadera Systems LLCaaa"}
       description={description || ""}
       openGraph={{
         title: headTitle || company || "CADERA SYSTEMS LLC",
         description: description || "",
-        site_name: headTitle || company || "CADERA SYSTEMS LLC",
+        site_name: company || "CADERA SYSTEMS LLC",
         locale: locale ?? "vi",
         images: [
           {
             url: og_image || "/og_image.png",
-            alt: company,
+            alt: headTitle,
             type: "image/jpeg",
           },
         ],
