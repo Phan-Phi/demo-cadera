@@ -26,12 +26,12 @@ const SEO = (props: SEOProps) => {
 
   return (
     <NextSeo
-      title={description}
-      description={description || ""}
+      title={company}
+      description={company || ""}
       openGraph={{
-        title: companyaaaaa,
-        description: companyaaaaa,
-        site_name: company || companyaaaaa,
+        title: company,
+        description: company,
+        site_name: company || company,
         locale: locale || "vi",
         images: [
           {
