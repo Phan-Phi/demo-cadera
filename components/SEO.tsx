@@ -29,9 +29,9 @@ const SEO = (props: SEOProps) => {
       title={demo}
       description={description || ""}
       openGraph={{
-        title: demo || "asdasdasd",
+        title: demo,
         description: description || "",
-        site_name: company || "CADERA SYSTEMS LLCaaaa",
+        site_name: demo,
         locale: locale ?? "vi",
         images: [
           {
