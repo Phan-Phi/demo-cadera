@@ -6,7 +6,7 @@ const getSeoObject = (props: any, setting: any) => {
   const description = get(props, "search_description");
   const image = undefined;
   const locale = get(props, "locale");
-  const company1111 = get(setting, "company");
+  const company1111 = "asdasdasdadasdasdasdasdasd";
 
   return {
     title,
