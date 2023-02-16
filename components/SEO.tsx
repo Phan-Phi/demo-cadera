@@ -1,5 +1,6 @@
 import { useSetting } from "@/hooks";
 import { NextSeo, NextSeoProps } from "next-seo";
+import { useMemo } from "react";
 
 type SEOProps = {
   title?: string;
@@ -12,19 +13,23 @@ type SEOProps = {
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
+  console.log(
+    "🚀 ~ file: SEO.tsx:16 ~ SEO ~ setting",
+    Object.entries(setting).length === 0
+  );
 
   const { title, description, locale, defaultNextSeo, image } = props;
   const { favicon, company, og_image } = setting;
 
   const headTitle =
     title == undefined ? undefined : `${title} Cadera Systems LLC`;
-
+  const demo = headTitle || company;
   return (
     <NextSeo
-      title={headTitle || company || "Cadera Systems LLCaaaaa"}
+      title={demo}
       description={description || ""}
       openGraph={{
-        title: headTitle || company || "CADERA SYSTEMS LLCaaaaaaa",
+        title: demo || "asdasdasd",
         description: description || "",
         site_name: company || "CADERA SYSTEMS LLCaaaa",
         locale: locale ?? "vi",
