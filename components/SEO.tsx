@@ -22,7 +22,7 @@ const SEO = (props: SEOProps) => {
   console.log("🚀 ~ file: SEO.tsx:29 ~ SEO ~ company", company);
 
   const headTitle = title == undefined ? undefined : title;
-  const demo = headTitle || company;
+  // const demo = headTitle || company;
 
   return (
     <NextSeo
