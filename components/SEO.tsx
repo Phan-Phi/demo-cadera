@@ -10,13 +10,15 @@ type SEOProps = {
   description?: string;
   image?: string;
   favicon?: string;
+  company1111?: string;
   locale?: string;
 };
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  const { title, description, locale, image } = props;
+  const { title, description, locale, image, company1111 } = props;
+  console.log("🚀 ~ file: SEO.tsx:21 ~ SEO ~ company1111", company1111);
   const { favicon, company, og_image, address } = setting;
 
   const headTitle = title == undefined ? undefined : title;
@@ -27,9 +29,9 @@ const SEO = (props: SEOProps) => {
       title={address}
       description={description || ""}
       openGraph={{
-        title: address || description,
-        description: description || "",
-        site_name: company || description,
+        title: address || company1111,
+        description: company1111,
+        site_name: company || company1111,
         images: [
           {
             url: image || og_image,
