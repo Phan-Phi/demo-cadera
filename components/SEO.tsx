@@ -1,5 +1,6 @@
 import { useSetting } from "@/hooks";
 import { NextSeo, NextSeoProps } from "next-seo";
+import { useMemo } from "react";
 
 type SEOProps = {
   title?: string;
@@ -12,44 +13,76 @@ type SEOProps = {
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
-  console.log("🚀 ~ file: SEO.tsx:15 ~ SEO ~ setting", setting);
 
   const { title, description, locale, defaultNextSeo, image } = props;
   const { favicon, company, og_image } = setting;
+  console.log("🚀 ~ file: SEO.tsx:18 ~ SEO ~ og_image", og_image);
 
   const headTitle =
     title == undefined ? undefined : `${title} Cadera Systems LLC`;
 
-  return (
-    <NextSeo
-      title={headTitle || company || "Cadera Systems LLC"}
-      description={description || ""}
-      openGraph={{
-        title: headTitle || company || "CADERA SYSTEMS LLC",
-        description: description || "",
-        site_name: company || "CADERA SYSTEMS LLC",
-        locale: locale ?? "vi",
-        images: [
+  const renderNextSeo = useMemo(() => {
+    return (
+      <NextSeo
+        title={headTitle || company || "Cadera Systems LLC"}
+        description={description || ""}
+        openGraph={{
+          title: headTitle || company || "CADERA SYSTEMS LLC",
+          description: description || "",
+          site_name: company || "CADERA SYSTEMS LLC",
+          locale: locale ?? "vi",
+          images: [
+            {
+              url: image || og_image,
+              alt: headTitle,
+              type: "image/jpeg",
+            },
+          ],
+        }}
+        additionalLinkTags={[
           {
-            url: image || og_image,
-            alt: headTitle,
-            type: "image/jpeg",
+            rel: "icon",
+            href: favicon || "/fav.png",
           },
-        ],
-      }}
-      additionalLinkTags={[
-        {
-          rel: "icon",
-          href: favicon || "/fav.png",
-        },
-        {
-          rel: "apple-touch-icon",
-          href: favicon || "/fav.png",
-        },
-      ]}
-      {...defaultNextSeo}
-    />
-  );
+          {
+            rel: "apple-touch-icon",
+            href: favicon || "/fav.png",
+          },
+        ]}
+        {...defaultNextSeo}
+      />
+    );
+  }, [setting]);
+
+  return <>{renderNextSeo}</>;
 };
 
 export default SEO;
+// <NextSeo
+//   title={headTitle || company || "Cadera Systems LLC"}
+//   description={description || ""}
+//   openGraph={{
+//     title: headTitle || company || "CADERA SYSTEMS LLC",
+//     description: description || "",
+//     site_name: company || "CADERA SYSTEMS LLC",
+//     locale: locale ?? "vi",
+//     images: [
+//       {
+//         url: image || og_image,
+//         alt: headTitle,
+//         type: "image/jpeg",
+//       },
+//     ],
+//   }}
+//   additionalLinkTags={[
+//     {
+//       rel: "icon",
+//       href: favicon || "/fav.png",
+//     },
+//     {
+//       rel: "apple-touch-icon",
+//       href: favicon || "/fav.png",
+//     },
+//   ]}
+//   {...defaultNextSeo}
+// />
