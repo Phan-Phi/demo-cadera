@@ -1,7 +1,7 @@
 import { ParsedUrlQuery } from "querystring";
 
 import axios from "axios.config";
-import { SETTING_API, PAGES_API } from "apis";
+import { SETTING_API, PAGES_API, TYPE_PARAMS } from "apis";
 import { transformUrl } from "@/utils";
 
 const prefetchData = async (
@@ -33,6 +33,7 @@ const prefetchData = async (
     ];
 
     const originalResList = [];
+
     const fallbackList: Record<string, any> = {};
 
     for await (const res of mergedUrlList.map(async (el) => {
