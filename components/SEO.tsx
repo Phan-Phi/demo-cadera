@@ -31,7 +31,7 @@ const SEO = (props: SEOProps) => {
         images: [
           {
             url: og_image || "/og_image.png",
-            alt: headTitle,
+            alt: company,
             type: "image/jpeg",
           },
         ],
