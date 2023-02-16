@@ -16,7 +16,6 @@ const SEO = (props: SEOProps) => {
 
   const { title, description, locale, defaultNextSeo, image } = props;
   const { favicon, company, og_image } = setting;
-  console.log("🚀 ~ file: SEO.tsx:18 ~ SEO ~ og_image", og_image);
 
   const headTitle =
     title == undefined ? undefined : `${title} Cadera Systems LLC`;
@@ -24,12 +23,12 @@ const SEO = (props: SEOProps) => {
   const renderNextSeo = useMemo(() => {
     return (
       <NextSeo
-        title={headTitle || company || "Cadera Systems LLC"}
+        title={headTitle || company}
         description={description || ""}
         openGraph={{
-          title: headTitle || company || "CADERA SYSTEMS LLC",
+          title: headTitle || company,
           description: description || "",
-          site_name: company || "CADERA SYSTEMS LLC",
+          site_name: company,
           locale: locale ?? "vi",
           images: [
             {
@@ -52,7 +51,7 @@ const SEO = (props: SEOProps) => {
         {...defaultNextSeo}
       />
     );
-  }, [setting]);
+  }, [setting.og_image]);
 
   return <>{renderNextSeo}</>;
 };
