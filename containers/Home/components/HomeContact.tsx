@@ -17,7 +17,7 @@ export default function HomeContact(props: Props) {
       <Container maxWidth="md">
         <Grid container>
           <Grid item xs={12}>
-            <HomeCTA />
+            {/* <HomeCTA /> */}
           </Grid>
 
           <Grid item xs={12}>

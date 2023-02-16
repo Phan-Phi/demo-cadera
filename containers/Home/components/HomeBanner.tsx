@@ -42,7 +42,7 @@ export default function HomeBanner(props: Props) {
 
         <Grid item sm={6} md={7}>
           <Box ref={ref} height={width}>
-            <HomeBannerModel />
+            {/* <HomeBannerModel /> */}
           </Box>
         </Grid>
       </StyledGrid>

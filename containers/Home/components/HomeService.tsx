@@ -23,11 +23,11 @@ export default function HomeService(props: Props) {
         </Grid>
 
         <Grid item xs={12}>
-          <CarouselService>
+          {/* <CarouselService>
             {dataDetail.map((el) => {
               return <ServiceItem key={el.id} {...el} />;
             })}
-          </CarouselService>
+          </CarouselService> */}
         </Grid>
       </Grid>
     </WrapperSection>
