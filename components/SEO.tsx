@@ -8,21 +8,18 @@ type SEOProps = {
   image?: string;
   favicon?: string;
   locale?: string;
+  company?: string;
   defaultNextSeo?: NextSeoProps;
 };
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  const [data, setData] = useState<any>();
-  console.log("🚀 ~ file: SEO.tsx:18 ~ SEO ~ data", data);
+  // const { rawData } = useFetch("https://cadera.t-solution.vn/api/v2/");
+  // console.log("🚀 ~ file: SEO.tsx:22 ~ SEO ~ rawData", rawData);
 
-  useEffect(() => {
-    setData(setting);
-  }, [setting]);
-
-  const { title, description, locale, defaultNextSeo, image } = props;
-  const { favicon, company, og_image, address } = setting;
+  const { title, description, locale, defaultNextSeo, image, company } = props;
+  const { favicon, og_image, address } = setting;
 
   const headTitle = title == undefined ? undefined : title;
   // const demo = headTitle || company;
@@ -32,9 +29,9 @@ const SEO = (props: SEOProps) => {
       title={address}
       description={description || ""}
       openGraph={{
-        title: company ? data.address : data.address,
-        description: company ? data.address : data.address,
-        site_name: company ? data.address : data.address,
+        title: company,
+        description: company,
+        site_name: company,
         locale: locale ?? "vi",
         images: [
           {
