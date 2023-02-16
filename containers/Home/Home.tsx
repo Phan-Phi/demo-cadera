@@ -25,17 +25,17 @@ export default function Home(props: HomePageProps) {
   const dataServiceDetail = get(props, "initData[1].items");
   const dataHomePage = get(props, "initData[0].items[0]");
   const metaSeo = get(dataHomePage, "meta");
-  const renderSEO = useMemo(() => {
-    if (Object.entries(setting).length === 0) {
-      return null;
-    }
-    return <SEO {...getSeoObject(metaSeo, setting)} />;
-  }, [setting]);
+  // const renderSEO = useMemo(() => {
+  //   if (Object.entries(setting).length === 0) {
+  //     return null;
+  //   }
+  //   return <SEO {...getSeoObject(metaSeo, setting)} />;
+  // }, [setting]);
 
   return (
     <Fragment>
-      {renderSEO}
-      {/* <SEO {...getSeoObject(metaSeo)} /> */}
+      {/* {renderSEO} */}
+      <SEO {...getSeoObject(metaSeo)} />
       <HomeBanner data={dataHomePage} />
 
       <HomeContent data={dataHomePage} />
