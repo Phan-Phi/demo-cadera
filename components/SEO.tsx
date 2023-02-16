@@ -35,13 +35,13 @@ const SEO = (props: SEOProps) => {
       title={company}
       description={company}
       openGraph={{
-        title: headTitle || company || "CADERA SYSTEMS LLC",
-        description: description || "",
-        site_name: company || "CADERA SYSTEMS LLC",
+        title: company,
+        description: company,
+        site_name: company,
         locale: locale ?? "vi",
         images: [
           {
-            url: image || "",
+            url: image || favicon,
             alt: headTitle,
             type: "image/jpeg",
           },
