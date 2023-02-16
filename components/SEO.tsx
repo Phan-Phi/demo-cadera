@@ -30,7 +30,6 @@ const SEO = (props: SEOProps) => {
         title: address,
         description: company,
         site_name: company,
-        locale: locale ?? "vi",
         images: [
           {
             url: image || og_image,
