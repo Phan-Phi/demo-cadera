@@ -21,6 +21,7 @@ const SEO = (props: SEOProps) => {
     title == undefined ? undefined : `${title} Cadera Systems LLC`;
 
   const renderNextSeo = useMemo(() => {
+    console.log("sadasdasdasd", setting.og_image);
     return (
       <NextSeo
         title={headTitle || company}
@@ -51,7 +52,7 @@ const SEO = (props: SEOProps) => {
         {...defaultNextSeo}
       />
     );
-  }, [setting.og_image]);
+  }, [og_image]);
 
   return <>{renderNextSeo}</>;
 };
