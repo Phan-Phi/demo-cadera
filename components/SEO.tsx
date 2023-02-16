@@ -25,7 +25,6 @@ const SEO = (props: SEOProps) => {
     company,
     settingImage,
   } = props;
-  console.log("🚀 ~ file: SEO.tsx:18 ~ SEO ~ props", props);
   const { favicon } = setting;
 
   const headTitle =
