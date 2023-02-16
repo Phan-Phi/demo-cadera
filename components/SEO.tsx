@@ -10,15 +10,15 @@ interface SEOProps extends NextSeoProps {
   description?: string;
   image?: string;
   favicon?: string;
-  company1111?: string;
+  companyaaaaa?: string;
   locale?: string;
 }
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  const { title, description, locale, image, company1111 } = props;
-  console.log("🚀 ~ file: SEO.tsx:21 ~ SEO ~ company1111", company1111);
+  const { title, description, locale, image, companyaaaaa } = props;
+  console.log("🚀 ~ file: SEO.tsx:21 ~ SEO ~ companyaaaaa", companyaaaaa);
   const { favicon, company, og_image, address } = setting;
 
   const headTitle = title == undefined ? undefined : title;
@@ -29,9 +29,9 @@ const SEO = (props: SEOProps) => {
       title={description}
       description={description || ""}
       openGraph={{
-        title: description,
-        description: company1111,
-        site_name: company || company1111,
+        title: companyaaaaa,
+        description: companyaaaaa,
+        site_name: company || companyaaaaa,
         locale: locale || "vi",
         images: [
           {
