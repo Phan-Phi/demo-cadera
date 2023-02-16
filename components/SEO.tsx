@@ -22,18 +22,18 @@ const SEO = (props: SEOProps) => {
     locale,
     defaultNextSeo,
     image,
-    company,
+    // company,
     settingImage,
   } = props;
-  const { favicon } = setting;
+  const { favicon, company } = setting;
 
   const headTitle =
     title == undefined ? undefined : `${title} Cadera Systems LLC`;
 
   return (
     <NextSeo
-      title={headTitle || company || "Cadera Systems LLC"}
-      description={description || ""}
+      title={company}
+      description={company}
       openGraph={{
         title: headTitle || company || "CADERA SYSTEMS LLC",
         description: description || "",
