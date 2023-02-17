@@ -13,7 +13,7 @@ const SWR = ({
   return (
     <SWRConfig
       value={{
-        fallback,
+        fallback: fallback || {},
         refreshInterval: 30000,
         revalidateOnMount: true,
         fetcher: async (resource) => {
