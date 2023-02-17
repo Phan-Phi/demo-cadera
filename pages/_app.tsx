@@ -32,7 +32,7 @@ export default function App(props: MyAppProps) {
       <ThemeProvider>
         <ErrorBoundaryWrapper>
           <Snack>
-            <SWR>
+            <SWR fallback={pageProps.fallback}>
               <Setting>
                 <Layout>
                   <Component {...pageProps} />

@@ -17,6 +17,7 @@ interface SEOProps extends NextSeoProps {
 
 const SEO = (props: any) => {
   const setting = useSetting();
+  console.log("🚀 ~ file: SEO.tsx:20 ~ SEO ~ setting", setting);
 
   const { title, description, locale, image, companyaaaaa } = props;
   const { favicon, company, og_image, address } = setting;
@@ -32,10 +33,10 @@ const SEO = (props: any) => {
 };
 
 const DemoNextSeo = (props: any) => {
-  console.log(
-    "🚀 ~ file: SEO.tsx:35 ~ DemoNextSeo ~ props",
-    props.value1.company
-  );
+  // console.log(
+  //   "🚀 ~ file: SEO.tsx:35 ~ DemoNextSeo ~ props",
+  //   props.value1.company
+  // );
 
   return (
     <NextSeo

@@ -3,10 +3,17 @@ import { SWRConfig } from "swr";
 
 import axios from "axios.config";
 
-const SWR = ({ children }: { children?: React.ReactNode }) => {
+const SWR = ({
+  children,
+  fallback,
+}: {
+  children?: React.ReactNode;
+  fallback: any;
+}) => {
   return (
     <SWRConfig
       value={{
+        fallback,
         refreshInterval: 30000,
         revalidateOnMount: true,
         fetcher: async (resource) => {
