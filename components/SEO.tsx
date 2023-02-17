@@ -23,7 +23,7 @@ const SEO = (props: any) => {
   const headTitle = title == undefined ? undefined : title;
   // const demo = headTitle || company;
 
-  const rendersss = useMemo(() => {
+  const rendersss = () => {
     console.log("asdasdasdadsas", company);
     return (
       <NextSeo
@@ -55,7 +55,7 @@ const SEO = (props: any) => {
         {...props}
       />
     );
-  });
+  };
 
   return <>{rendersss}</>;
 };
