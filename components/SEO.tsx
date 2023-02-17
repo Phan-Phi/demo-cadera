@@ -38,7 +38,6 @@ const DemoNextSeo = (props: any) => {
   );
 
   return (
-    // <Typography>asdasd</Typography>
     <NextSeo
       title={props.value1.company}
       description={props.value1.company || ""}
