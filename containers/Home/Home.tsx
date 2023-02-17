@@ -25,6 +25,7 @@ export default function Home(props: HomePageProps) {
   const dataServiceDetail = get(props, "initData[1].items");
   const dataHomePage = get(props, "initData[0].items[0]");
   const metaSeo = get(dataHomePage, "meta");
+  console.log("🚀 ~ file: Home.tsx:28 ~ Home ~ metaSeo", metaSeo);
 
   return (
     <Fragment>
