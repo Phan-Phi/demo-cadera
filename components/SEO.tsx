@@ -1,56 +1,36 @@
-import { SETTING_API } from "@/apis";
-import { useFetch, useSetting } from "@/hooks";
-import { SETTING_ITEM } from "@/interfaces";
-import { Typography } from "@mui/material";
+import { useSetting } from "@/hooks";
 import { NextSeo, NextSeoProps } from "next-seo";
-import { useCallback, useMemo } from "react";
-import useSWR from "swr";
 
 interface SEOProps extends NextSeoProps {
   title?: string;
   description?: string;
   image?: string;
   favicon?: string;
-  companyaaaaa?: string;
   locale?: string;
 }
 
-const SEO = (props: any) => {
+const SEO = (props: SEOProps) => {
   const setting = useSetting();
-  console.log("🚀 ~ file: SEO.tsx:20 ~ SEO ~ setting", setting);
 
-  const { title, description, locale, image, companyaaaaa } = props;
-  const { favicon, company, og_image, address } = setting;
+  const { title, description, locale, image } = props;
+  const { favicon, company, og_image } = setting;
 
-  const headTitle = title == undefined ? undefined : title;
-  // const demo = headTitle || company;
-
-  const rendersss = useMemo(() => {
-    return <DemoNextSeo value1={setting} value2={props} />;
-  }, [setting]);
-
-  return <>{rendersss}</>;
-};
-
-const DemoNextSeo = (props: any) => {
-  // console.log(
-  //   "🚀 ~ file: SEO.tsx:35 ~ DemoNextSeo ~ props",
-  //   props.value1.company
-  // );
+  const headTitle =
+    title == undefined ? undefined : `${title} Cadera Systems LLC`;
 
   return (
     <NextSeo
-      title={props.value1.company}
-      description={props.value1.company || ""}
+      title={headTitle || company || "Cadera Systems LLC"}
+      description={description || ""}
       openGraph={{
-        title: props.value1.company,
-        description: props.value1.company,
-        site_name: props.value1.company || props.value1.company,
-        locale: "vi",
+        title: headTitle || company || "CADERA SYSTEMS LLC",
+        description: description || "",
+        site_name: company || "CADERA SYSTEMS LLC",
+        locale: locale ?? "vi",
         images: [
           {
-            url: "",
-            alt: props.value1.company,
+            url: image || og_image,
+            alt: headTitle,
             type: "image/jpeg",
           },
         ],
@@ -58,11 +38,11 @@ const DemoNextSeo = (props: any) => {
       additionalLinkTags={[
         {
           rel: "icon",
-          href: "/fav.png",
+          href: favicon,
         },
         {
           rel: "apple-touch-icon",
-          href: "/fav.png",
+          href: favicon,
         },
       ]}
       {...props}

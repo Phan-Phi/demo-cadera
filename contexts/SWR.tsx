@@ -3,13 +3,12 @@ import { SWRConfig } from "swr";
 
 import axios from "axios.config";
 
-const SWR = ({
-  children,
-  fallback,
-}: {
-  children?: React.ReactNode;
-  fallback: any;
-}) => {
+type SWRProps = {
+  children: React.ReactNode;
+  fallback?: { [key: string]: any };
+};
+
+const SWR = ({ children, fallback }: SWRProps) => {
   return (
     <SWRConfig
       value={{

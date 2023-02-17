@@ -17,7 +17,7 @@ const clientSideEmotionCache = createEmotionCache();
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
-  pageProps: IPage<[unknown]>;
+  pageProps: { initData: []; fallback: [] };
 }
 
 export default function App(props: MyAppProps) {
