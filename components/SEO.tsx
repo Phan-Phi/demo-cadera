@@ -55,7 +55,7 @@ const SEO = (props: any) => {
         {...props}
       />
     );
-  }, [setting]);
+  });
 
   return <>{rendersss}</>;
 };
