@@ -38,7 +38,7 @@ export default function Services(props: ServicesProps) {
 
   return (
     <WrapperSection>
-      {/* <SEO {...getSeoObject(metaSEO)} /> */}
+      <SEO {...getSeoObject(metaSEO)} />
 
       <Headline title={title} subTitle={sub_title} />
 

@@ -22,23 +22,13 @@ export type HomePageProps = IPage<
 >;
 
 export default function Home(props: HomePageProps) {
-  const setting = useSetting();
-  const [demo, setDeme] = useState(setting);
-
   const dataServiceDetail = get(props, "initData[1].items");
   const dataHomePage = get(props, "initData[0].items[0]");
   const metaSeo = get(dataHomePage, "meta");
-  const metaSeo1 = { metaSeo, ...setting };
-
-  // const renderSEO = useMemo(() => {
-  //   if(Object.keys)
-  //   return <SEO {...getSeoObject(metaSeo, setting)} />;
-  // }, [demo]);
 
   return (
     <Fragment>
-      {/* {renderSEO} */}
-      <SEO {...getSeoObject(metaSeo1)} />
+      <SEO {...getSeoObject(metaSeo)} />
       <HomeBanner data={dataHomePage} />
 
       <HomeContent data={dataHomePage} />

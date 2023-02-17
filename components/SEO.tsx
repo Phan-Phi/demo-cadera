@@ -1,18 +1,19 @@
 import { useSetting } from "@/hooks";
 import { NextSeo, NextSeoProps } from "next-seo";
 
-interface SEOProps extends NextSeoProps {
+type SEOProps = {
   title?: string;
   description?: string;
   image?: string;
   favicon?: string;
   locale?: string;
-}
+  defaultNextSeo?: NextSeoProps;
+};
 
 const SEO = (props: SEOProps) => {
   const setting = useSetting();
 
-  const { title, description, locale, image } = props;
+  const { title, description, locale, defaultNextSeo, image } = props;
   const { favicon, company, og_image } = setting;
 
   const headTitle =
@@ -45,7 +46,7 @@ const SEO = (props: SEOProps) => {
           href: favicon,
         },
       ]}
-      {...props}
+      {...defaultNextSeo}
     />
   );
 };

@@ -38,7 +38,7 @@ const Client = (props: ClientPageProps) => {
 
   return (
     <Container>
-      {/* <SEO {...getSeoObject(metaSEO)} /> */}
+      <SEO {...getSeoObject(metaSEO)} />
 
       <WrapperSection>
         <Headline

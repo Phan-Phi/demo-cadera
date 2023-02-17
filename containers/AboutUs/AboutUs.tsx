@@ -23,7 +23,7 @@ export default function AboutUs(props: AboutUsProps) {
   return (
     <Container>
       <WrapperSection>
-        {/* <SEO {...getSeoObject(metaSeo)} /> */}
+        <SEO {...getSeoObject(metaSeo)} />
 
         <Headline title={title} subTitle={sub_title} />
 
