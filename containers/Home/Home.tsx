@@ -31,6 +31,7 @@ export default function Home(props: HomePageProps) {
   const metaSeo1 = { metaSeo, ...setting };
 
   // const renderSEO = useMemo(() => {
+  //   if(Object.keys)
   //   return <SEO {...getSeoObject(metaSeo, setting)} />;
   // }, [demo]);
 
